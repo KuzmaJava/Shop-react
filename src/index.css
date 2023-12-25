@@ -42,7 +42,7 @@ header ul.nav li:hover {
 }
 
 header .presentation {
- /* up and bottom 50 px, left and right 0 px */
+    /* up and bottom 50 px, left and right 0 px */
     margin: 50px 0;
     background: url('./images/loft.jpg') no-repeat;
     width: 100%;
@@ -73,6 +73,68 @@ header .presentation::before {
     font-size: 15px;
     font-weight: 300;
     color: #fff;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f5f5f5;
+    /* images will not expand beyond the border ( while hovering f.e. ) */
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+main .item img {
+    width: 100%;
+    /* add rounding of images ( corners ) only at the top left ad top right. At the bottom ( corners ) no rounding. */
+    border-radius: 10px 10px 0 0;
+    transition: transform 500ms ease;
+}
+
+main .item img:hover {
+    transform: scale(1.05);
+}
+
+main h2,
+main p,
+main b {
+    /* 10px ( bottom top ), 20px ( left right ) */
+    margin: 10px 20px;
+    color: #333;
+}
+
+main b {
+    color: #5fa36a;
+}
+
+main .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #ca5252;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    /* while hovering it will increase easily ( slowly ) */
+    transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover {
+    /* while hovering the bottom "+" will increase to the top (-5px specified) */
+    transform: scale(1.5) translateY(-5px);
 }
 
 footer {
