@@ -8,7 +8,7 @@ export default function Header() {
                 <ul className='nav'>
                     <li>About us</li>
                     <li>Contacts</li>
-                    <li>Cabinet </li>
+                    <li>Cabinet</li>
                 </ul>
             </div>
             <div className='presentation'></div>
