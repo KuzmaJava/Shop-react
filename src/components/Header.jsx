@@ -3,10 +3,13 @@ import {FaShoppingCart} from "react-icons/fa"
 import Order from "./Order";
 
 const showOrders = (props) => {
+    let sum = 0;
+    props.orders.forEach(element => sum+= Number.parseFloat(element.price))
     return (<div>
         {props.orders.map(element => (
-            <Order key={element.id} item={element} />
+            <Order onDelete={props.onDelete} key={element.id} item={element} />
         ))}
+        <p className='sum'>Sum is : {new Intl.NumberFormat().format(sum)}₽</p>
     </div>)
 }
 
